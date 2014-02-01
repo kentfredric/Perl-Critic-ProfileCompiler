@@ -46,7 +46,7 @@ BUNDLES
     These are intended to mimic other "CPAN" distribution names.
 
     For instance, a bundle that provides all the contents of
-    Perl::Critic::Pulp would be included in a bundle:
+    "Perl::Critic::Pulp" would be included in a bundle:
 
         Perl::Critic::ProfileCompiler::Bundle::Pulp
 
@@ -121,7 +121,7 @@ CONFIGURATION AND EXECUTION
 
         perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-    I shall endeavour to also eventually have a Dist::Zilla plugin that
+    I shall endeavour to also eventually have a "Dist::Zilla" plugin that
     translates one into the other during "build" phase, for authors who wish
     to truly keep their source tree free of the canonicalized form.
 

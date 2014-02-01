@@ -178,7 +178,7 @@ L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMIN
 
 These are intended to mimic other C<CPAN> distribution names.
 
-For instance, a bundle that provides all the contents of L<Perl::Critic::Pulp> would be included in a bundle:
+For instance, a bundle that provides all the contents of L<< C<Perl::Critic::Pulp>|Perl::Critic::Pulp >> would be included in a bundle:
 
     Perl::Critic::ProfileCompiler::Bundle::Pulp
 
@@ -250,7 +250,7 @@ configuration specified.
 
     perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-I shall endeavour to also eventually have a L<Dist::Zilla> plugin that translates one into the other during C<build> phase, for
+I shall endeavour to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during C<build> phase, for
 authors who wish to truly keep their source tree free of the canonicalized form.
 
 =head1 AUTHOR
