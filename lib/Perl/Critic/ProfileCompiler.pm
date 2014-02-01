@@ -7,16 +7,19 @@ package Perl::Critic::ProfileCompiler;
 
 # ABSTRACT: Generate canonical perlcritic.rc files from reduced configuration
 
+# AUTHORITY
+
 use Moo;
 
 =head1 DESCRIPTION
 
-L<Perl::Critic> default behaviour is to simply assume if you want a given policy, that you would have installed it already, and
-that if that policy is installed, then it assumes you want it.
+L<< C<Perl::Critic>|Perl::Critic >> default behavior is to simply assume if you want a given policy, that you would have
+installed it already, and that if that policy is installed, then it assumes you want it.
 
-L<Perl::Critic> also currently has a limitation, that if you want to exclude several policies, that can be messey.
+L<< C<Perl::Critic>|Perl::Critic >> also currently has a limitation, that if you want to exclude several policies, that can be
+messy.
 
-There are ways around both these issues, but they're rather messey.
+There are ways around both these issues, but they're rather messy.
 
 There's no clear way to say:
 
@@ -29,21 +32,23 @@ This module exists to work around this problem by allowing you to define short-h
 of policies, which can be expanded and augmented into a strict and comprehensive canonical Perl::Critic C<perlcritic.rc> file,
 comparable to C<perlcritic --profile-proto>'s output, but adjusted to explicitly communicate your requirements.
 
-This module also aims to make it easier for CPAN authors to share and distribute Perl::Critic profile configurations via CPAN,
-so that such profiles can be shared between distributions with minor adjustments instead of each and every distribution needing
-to hand-copy and augment the C<perlcritic.rc> file.
+This module also aims to make it easier for C<CPAN> authors to share and distribute Perl::Critic profile configurations via
+C<CPAN>, so that such profiles can be shared between distributions with minor adjustments instead of each and every distribution
+needing to hand-copy and augment the C<perlcritic.rc> file.
 
 =head1 BUNDLES
 
-It is intended that CPAN authors who use this toolkit make bundles in one of the following forms.
+It is intended that C<CPAN> authors who use this toolkit make bundles in one of the following forms.
 
-The rationale behind the naming schemes are articulated in my L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
+The rationale behind the naming schemes are articulated in my
+L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
 
-=head2 Perl::Critic Distribution Centric Bundles
+=head2 Perl::Critic Distribution Centered Bundles
 
-These are intended to mimic other CPAN distribution names.
+These are intended to mimic other C<CPAN> distribution names.
 
-For instance, a bundle that provides all the contents of L<Perl::Critic::Pulp> would be included in a bundle:
+For instance, a bundle that provides all the contents of L<< C<Perl::Critic::Pulp>|Perl::Critic::Pulp >> would be included in a
+bundle:
 
     Perl::Critic::ProfileCompiler::Bundle::Pulp
 
@@ -65,11 +70,12 @@ And added via:
 
     [@Theme::core]
 
-=head2 Organisational Authority Centric Bundles
+=head2 Organizational Authority Centered Bundles
 
-These are intended for organisations, such as workplaces and non-profit organisations, such as P5P itself.
+These are intended for organizations, such as workplaces and non-profit organizations, such as P5P itself.
 
-The goal being that those organisations can provide recommended standard critic policy sets independent of Perl::Critic's release cycle.
+The goal being that those organizations can provide recommended standard critic policy sets independent of Perl::Critic's release
+cycle.
 
 For instance, P5P could provide and regulate their own bundle as follows:
 
@@ -79,11 +85,11 @@ Mozilla could do this:
 
     Perl::Critic::ProfileCompiler::Bundle::Org::Mozilla
 
-Enlightened Perl Organisation could do this:
+Enlightened Perl Organization could do this:
 
     Perl::Critic::ProfileCompiler::Bundle::Org::EPO
 
-And they'd be includable as:
+And they'd be included as:
 
     [@Org::P5P]
     [@Org::Mozilla]
@@ -91,9 +97,9 @@ And they'd be includable as:
 
 Respectively.
 
-=head2 Author Authority Centric Bundles
+=head2 Author Authority Centered Bundles
 
-These are intended for individual CPAN authors who just have a way of doing things that they want to use in several places.
+These are intended for individual C<CPAN> authors who just have a way of doing things that they want to use in several places.
 
 I for instance, will eventually be creating:
 
@@ -107,7 +113,7 @@ Which will be available as
 
 =head1 CONFIGURATION AND EXECUTION
 
-To utilise the profile compiler, a first step is creating a C<perlcritic-meta.rc> file.
+To utilize the profile compiler, a first step is creating a C<perlcritic-meta.rc> file.
 
 This contains the specification for the canonical configuration you wish to use.
 
@@ -116,8 +122,8 @@ configuration specified.
 
     perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-I shall endeavour to also eventually have a L<Dist::Zilla> plugin that translates one into the other during C<build> phase, for
-authors who wish to truely keep their source tree free of the canonicalised form.
+I shall endeavor to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during
+C<build> phase, for authors who wish to truly keep their source tree free of the canonicalized form.
 
 =cut
 
