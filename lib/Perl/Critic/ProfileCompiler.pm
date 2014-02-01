@@ -143,7 +143,7 @@ version 0.001000
 
 =head1 DESCRIPTION
 
-L<Perl::Critic> default behaviour is to simply assume if you want a given policy, that you would have installed it already, and
+L<Perl::Critic> default behavior is to simply assume if you want a given policy, that you would have installed it already, and
 that if that policy is installed, then it assumes you want it.
 
 L<Perl::Critic> also currently has a limitation, that if you want to exclude several policies, that can be messy.
@@ -171,7 +171,7 @@ It is intended that C<CPAN> authors who use this toolkit make bundles in one of 
 
 The rationale behind the naming schemes are articulated in my L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
 
-=head2 Perl::Critic Distribution Centric Bundles
+=head2 Perl::Critic Distribution Centered Bundles
 
 These are intended to mimic other C<CPAN> distribution names.
 
@@ -197,7 +197,7 @@ And added via:
 
     [@Theme::core]
 
-=head2 Organisational Authority Centric Bundles
+=head2 Organisational Authority Centered Bundles
 
 These are intended for organisations, such as workplaces and non-profit organisations, such as P5P itself.
 
@@ -215,7 +215,7 @@ Enlightened Perl Organisation could do this:
 
     Perl::Critic::ProfileCompiler::Bundle::Org::EPO
 
-And they'd be includable as:
+And they'd be included as:
 
     [@Org::P5P]
     [@Org::Mozilla]
@@ -223,7 +223,7 @@ And they'd be includable as:
 
 Respectively.
 
-=head2 Author Authority Centric Bundles
+=head2 Author Authority Centered Bundles
 
 These are intended for individual C<CPAN> authors who just have a way of doing things that they want to use in several places.
 
@@ -247,7 +247,7 @@ configuration specified.
     perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
 I shall endeavour to also eventually have a L<Dist::Zilla> plugin that translates one into the other during C<build> phase, for
-authors who wish to truely keep their source tree free of the canonicalised form.
+authors who wish to truly keep their source tree free of the canonicalized form.
 
 =head1 AUTHOR
 

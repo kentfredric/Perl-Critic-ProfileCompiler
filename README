@@ -6,7 +6,7 @@ VERSION
     version 0.001000
 
 DESCRIPTION
-    Perl::Critic default behaviour is to simply assume if you want a given
+    Perl::Critic default behavior is to simply assume if you want a given
     policy, that you would have installed it already, and that if that
     policy is installed, then it assumes you want it.
 
@@ -42,7 +42,7 @@ BUNDLES
     The rationale behind the naming schemes are articulated in my
     "Dist::Zilla" Author Bundle
 
-  Perl::Critic Distribution Centric Bundles
+  Perl::Critic Distribution Centered Bundles
     These are intended to mimic other "CPAN" distribution names.
 
     For instance, a bundle that provides all the contents of
@@ -68,7 +68,7 @@ BUNDLES
 
         [@Theme::core]
 
-  Organisational Authority Centric Bundles
+  Organisational Authority Centered Bundles
     These are intended for organisations, such as workplaces and non-profit
     organisations, such as P5P itself.
 
@@ -88,7 +88,7 @@ BUNDLES
 
         Perl::Critic::ProfileCompiler::Bundle::Org::EPO
 
-    And they'd be includable as:
+    And they'd be included as:
 
         [@Org::P5P]
         [@Org::Mozilla]
@@ -96,7 +96,7 @@ BUNDLES
 
     Respectively.
 
-  Author Authority Centric Bundles
+  Author Authority Centered Bundles
     These are intended for individual "CPAN" authors who just have a way of
     doing things that they want to use in several places.
 
@@ -123,7 +123,7 @@ CONFIGURATION AND EXECUTION
 
     I shall endeavour to also eventually have a Dist::Zilla plugin that
     translates one into the other during "build" phase, for authors who wish
-    to truely keep their source tree free of the canonicalised form.
+    to truly keep their source tree free of the canonicalized form.
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
