@@ -200,11 +200,11 @@ And added via:
 
     [@Theme::core]
 
-=head2 Organisational Authority Centered Bundles
+=head2 Organizational Authority Centered Bundles
 
-These are intended for organisations, such as workplaces and non-profit organisations, such as P5P itself.
+These are intended for organizations, such as workplaces and non-profit organizations, such as P5P itself.
 
-The goal being that those organisations can provide recommended standard critic policy sets independent of Perl::Critic's release
+The goal being that those organizations can provide recommended standard critic policy sets independent of Perl::Critic's release
 cycle.
 
 For instance, P5P could provide and regulate their own bundle as follows:
@@ -215,7 +215,7 @@ Mozilla could do this:
 
     Perl::Critic::ProfileCompiler::Bundle::Org::Mozilla
 
-Enlightened Perl Organisation could do this:
+Enlightened Perl Organization could do this:
 
     Perl::Critic::ProfileCompiler::Bundle::Org::EPO
 
