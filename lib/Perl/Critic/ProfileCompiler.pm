@@ -7,6 +7,8 @@ package Perl::Critic::ProfileCompiler;
 $Perl::Critic::ProfileCompiler::VERSION = '0.001000';
 # ABSTRACT: Generate canonical perlcritic.rc files from reduced configuration
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moo;
 
 
@@ -144,9 +146,9 @@ version 0.001000
 L<Perl::Critic> default behaviour is to simply assume if you want a given policy, that you would have installed it already, and
 that if that policy is installed, then it assumes you want it.
 
-L<Perl::Critic> also currently has a limitation, that if you want to exclude several policies, that can be messey.
+L<Perl::Critic> also currently has a limitation, that if you want to exclude several policies, that can be messy.
 
-There are ways around both these issues, but they're rather messey.
+There are ways around both these issues, but they're rather messy.
 
 There's no clear way to say:
 

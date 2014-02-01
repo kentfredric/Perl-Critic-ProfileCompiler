@@ -11,9 +11,9 @@ DESCRIPTION
     policy is installed, then it assumes you want it.
 
     Perl::Critic also currently has a limitation, that if you want to
-    exclude several policies, that can be messey.
+    exclude several policies, that can be messy.
 
-    There are ways around both these issues, but they're rather messey.
+    There are ways around both these issues, but they're rather messy.
 
     There's no clear way to say:
 
