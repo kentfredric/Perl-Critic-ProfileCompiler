@@ -125,6 +125,8 @@ use Moo;
 
 
 
+
+
 no Moo;
 
 1;
@@ -145,10 +147,11 @@ version 0.001000
 
 =head1 DESCRIPTION
 
-L<< C<Perl::Critic>|Perl::Critic >> default behavior is to simply assume if you want a given policy, that you would have installed it already, and
-that if that policy is installed, then it assumes you want it.
+L<< C<Perl::Critic>|Perl::Critic >> default behavior is to simply assume if you want a given policy, that you would have
+installed it already, and that if that policy is installed, then it assumes you want it.
 
-L<< C<Perl::Critic>|Perl::Critic >> also currently has a limitation, that if you want to exclude several policies, that can be messy.
+L<< C<Perl::Critic>|Perl::Critic >> also currently has a limitation, that if you want to exclude several policies, that can be
+messy.
 
 There are ways around both these issues, but they're rather messy.
 
@@ -178,7 +181,8 @@ L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMIN
 
 These are intended to mimic other C<CPAN> distribution names.
 
-For instance, a bundle that provides all the contents of L<< C<Perl::Critic::Pulp>|Perl::Critic::Pulp >> would be included in a bundle:
+For instance, a bundle that provides all the contents of L<< C<Perl::Critic::Pulp>|Perl::Critic::Pulp >> would be included in a
+bundle:
 
     Perl::Critic::ProfileCompiler::Bundle::Pulp
 
@@ -250,8 +254,8 @@ configuration specified.
 
     perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-I shall endeavor to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during C<build> phase, for
-authors who wish to truly keep their source tree free of the canonicalized form.
+I shall endeavor to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during
+C<build> phase, for authors who wish to truly keep their source tree free of the canonicalized form.
 
 =head1 AUTHOR
 
