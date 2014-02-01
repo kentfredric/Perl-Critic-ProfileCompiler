@@ -6,11 +6,11 @@ VERSION
     version 0.001000
 
 DESCRIPTION
-    Perl::Critic default behavior is to simply assume if you want a given
+    "Perl::Critic" default behavior is to simply assume if you want a given
     policy, that you would have installed it already, and that if that
     policy is installed, then it assumes you want it.
 
-    Perl::Critic also currently has a limitation, that if you want to
+    "Perl::Critic" also currently has a limitation, that if you want to
     exclude several policies, that can be messy.
 
     There are ways around both these issues, but they're rather messy.

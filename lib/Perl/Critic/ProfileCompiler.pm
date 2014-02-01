@@ -123,6 +123,8 @@ use Moo;
 
 
 
+
+
 no Moo;
 
 1;
@@ -143,10 +145,10 @@ version 0.001000
 
 =head1 DESCRIPTION
 
-L<Perl::Critic> default behavior is to simply assume if you want a given policy, that you would have installed it already, and
+L<< C<Perl::Critic>|Perl::Critic >> default behavior is to simply assume if you want a given policy, that you would have installed it already, and
 that if that policy is installed, then it assumes you want it.
 
-L<Perl::Critic> also currently has a limitation, that if you want to exclude several policies, that can be messy.
+L<< C<Perl::Critic>|Perl::Critic >> also currently has a limitation, that if you want to exclude several policies, that can be messy.
 
 There are ways around both these issues, but they're rather messy.
 
@@ -161,15 +163,16 @@ This module exists to work around this problem by allowing you to define short-h
 of policies, which can be expanded and augmented into a strict and comprehensive canonical Perl::Critic C<perlcritic.rc> file,
 comparable to C<perlcritic --profile-proto>'s output, but adjusted to explicitly communicate your requirements.
 
-This module also aims to make it easier for C<CPAN> authors to share and distribute Perl::Critic profile configurations via C<CPAN>,
-so that such profiles can be shared between distributions with minor adjustments instead of each and every distribution needing
-to hand-copy and augment the C<perlcritic.rc> file.
+This module also aims to make it easier for C<CPAN> authors to share and distribute Perl::Critic profile configurations via
+C<CPAN>, so that such profiles can be shared between distributions with minor adjustments instead of each and every distribution
+needing to hand-copy and augment the C<perlcritic.rc> file.
 
 =head1 BUNDLES
 
 It is intended that C<CPAN> authors who use this toolkit make bundles in one of the following forms.
 
-The rationale behind the naming schemes are articulated in my L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
+The rationale behind the naming schemes are articulated in my
+L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
 
 =head2 Perl::Critic Distribution Centered Bundles
 
@@ -201,7 +204,8 @@ And added via:
 
 These are intended for organisations, such as workplaces and non-profit organisations, such as P5P itself.
 
-The goal being that those organisations can provide recommended standard critic policy sets independent of Perl::Critic's release cycle.
+The goal being that those organisations can provide recommended standard critic policy sets independent of Perl::Critic's release
+cycle.
 
 For instance, P5P could provide and regulate their own bundle as follows:
 
