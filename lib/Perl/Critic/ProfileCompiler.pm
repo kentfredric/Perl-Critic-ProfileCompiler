@@ -241,7 +241,7 @@ Which will be available as
 
 =head1 CONFIGURATION AND EXECUTION
 
-To utilise the profile compiler, a first step is creating a C<perlcritic-meta.rc> file.
+To utilize the profile compiler, a first step is creating a C<perlcritic-meta.rc> file.
 
 This contains the specification for the canonical configuration you wish to use.
 
@@ -250,7 +250,7 @@ configuration specified.
 
     perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-I shall endeavour to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during C<build> phase, for
+I shall endeavor to also eventually have a L<< C<Dist::Zilla>|Dist::Zilla >> plugin that translates one into the other during C<build> phase, for
 authors who wish to truly keep their source tree free of the canonicalized form.
 
 =head1 AUTHOR

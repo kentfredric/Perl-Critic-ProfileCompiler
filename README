@@ -109,7 +109,7 @@ BUNDLES
         [@Author::KENTNL]
 
 CONFIGURATION AND EXECUTION
-    To utilise the profile compiler, a first step is creating a
+    To utilize the profile compiler, a first step is creating a
     "perlcritic-meta.rc" file.
 
     This contains the specification for the canonical configuration you wish
@@ -121,7 +121,7 @@ CONFIGURATION AND EXECUTION
 
         perlcritic-pc ./perlcritic-meta.rc -o perlcritic.rc
 
-    I shall endeavour to also eventually have a "Dist::Zilla" plugin that
+    I shall endeavor to also eventually have a "Dist::Zilla" plugin that
     translates one into the other during "build" phase, for authors who wish
     to truly keep their source tree free of the canonicalized form.
 
