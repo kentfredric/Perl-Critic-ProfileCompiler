@@ -161,19 +161,19 @@ This module exists to work around this problem by allowing you to define short-h
 of policies, which can be expanded and augmented into a strict and comprehensive canonical Perl::Critic C<perlcritic.rc> file,
 comparable to C<perlcritic --profile-proto>'s output, but adjusted to explicitly communicate your requirements.
 
-This module also aims to make it easier for CPAN authors to share and distribute Perl::Critic profile configurations via CPAN,
+This module also aims to make it easier for C<CPAN> authors to share and distribute Perl::Critic profile configurations via C<CPAN>,
 so that such profiles can be shared between distributions with minor adjustments instead of each and every distribution needing
 to hand-copy and augment the C<perlcritic.rc> file.
 
 =head1 BUNDLES
 
-It is intended that CPAN authors who use this toolkit make bundles in one of the following forms.
+It is intended that C<CPAN> authors who use this toolkit make bundles in one of the following forms.
 
 The rationale behind the naming schemes are articulated in my L<< C<Dist::Zilla> Author Bundle|Dist::Zilla::PluginBundle::Author::KENTNL/NAMING-SCHEME >>
 
 =head2 Perl::Critic Distribution Centric Bundles
 
-These are intended to mimic other CPAN distribution names.
+These are intended to mimic other C<CPAN> distribution names.
 
 For instance, a bundle that provides all the contents of L<Perl::Critic::Pulp> would be included in a bundle:
 
@@ -225,7 +225,7 @@ Respectively.
 
 =head2 Author Authority Centric Bundles
 
-These are intended for individual CPAN authors who just have a way of doing things that they want to use in several places.
+These are intended for individual C<CPAN> authors who just have a way of doing things that they want to use in several places.
 
 I for instance, will eventually be creating:
 

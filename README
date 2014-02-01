@@ -29,21 +29,21 @@ DESCRIPTION
     --profile-proto"'s output, but adjusted to explicitly communicate your
     requirements.
 
-    This module also aims to make it easier for CPAN authors to share and
-    distribute Perl::Critic profile configurations via CPAN, so that such
+    This module also aims to make it easier for "CPAN" authors to share and
+    distribute Perl::Critic profile configurations via "CPAN", so that such
     profiles can be shared between distributions with minor adjustments
     instead of each and every distribution needing to hand-copy and augment
     the "perlcritic.rc" file.
 
 BUNDLES
-    It is intended that CPAN authors who use this toolkit make bundles in
+    It is intended that "CPAN" authors who use this toolkit make bundles in
     one of the following forms.
 
     The rationale behind the naming schemes are articulated in my
     "Dist::Zilla" Author Bundle
 
   Perl::Critic Distribution Centric Bundles
-    These are intended to mimic other CPAN distribution names.
+    These are intended to mimic other "CPAN" distribution names.
 
     For instance, a bundle that provides all the contents of
     Perl::Critic::Pulp would be included in a bundle:
@@ -97,7 +97,7 @@ BUNDLES
     Respectively.
 
   Author Authority Centric Bundles
-    These are intended for individual CPAN authors who just have a way of
+    These are intended for individual "CPAN" authors who just have a way of
     doing things that they want to use in several places.
 
     I for instance, will eventually be creating:
