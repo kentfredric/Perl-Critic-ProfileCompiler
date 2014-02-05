@@ -10,7 +10,7 @@ $Perl::Critic::ProfileCompiler::Action::append_bundle::VERSION = '0.001000';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moo;
-
+use Perl::Critic::ProfileCompiler::Util qw( create_bundle );
 with 'Perl::Critic::ProfileCompiler::Role::Action';
 
 has 'bundle' => (
@@ -26,6 +26,14 @@ has 'parameters' => (
   },
 );
 
+sub inline {
+  my ( $self, $stack ) = @_;
+  my $bundle = create_bundle( $self->bundle, %{ $self->parameters } );
+  $bundle->configure;
+  my $infl = $bundle->actionlist->get_inflated;
+  push @{$stack}, @{ $infl->actions };
+  return $stack;
+}
 no Moo;
 
 1;

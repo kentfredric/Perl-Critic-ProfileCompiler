@@ -13,6 +13,7 @@ with 'Perl::Critic::ProfileCompiler::Role::Bundle';
 
 sub configure {
   my ($self) = @_;
+  $self->append_bundle('Core');
   $self->append_bundle('Itch');
   $self->add_or_replace_plugin('Variables::ProhibitUnusedVarsStricter');
   $self->append_bundle('Pulp');

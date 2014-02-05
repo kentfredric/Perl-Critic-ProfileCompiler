@@ -28,6 +28,8 @@ lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm
 lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin_field.pm
 lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm
 lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
+lib/Perl/Critic/ProfileCompiler/ActionList.pm
+lib/Perl/Critic/ProfileCompiler/ActionList/Inflated.pm
 lib/Perl/Critic/ProfileCompiler/Role/Action.pm
 lib/Perl/Critic/ProfileCompiler/Role/Bundle.pm
 lib/Perl/Critic/ProfileCompiler/Role/Bundle/Simple.pm
@@ -49,6 +51,8 @@ maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
 perlcritic.rc
+t/00-compile/lib_Perl_Critic_ProfileCompiler_ActionList_Inflated_pm.t
+t/00-compile/lib_Perl_Critic_ProfileCompiler_ActionList_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_append_plugin_field_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_replace_plugin_field_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_replace_plugin_pm.t
@@ -60,6 +64,7 @@ t/00-compile/lib_Perl_Critic_ProfileCompiler_Role_Bundle_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Util_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_pm.t
 t/00-report-prereqs.t
+t/01-role-bundle/01-dummy-bundle.t
 util/install-json-to-bundle.pl
 util/regen_critic_bundles.pl
 weaver.ini

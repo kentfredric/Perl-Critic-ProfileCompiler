@@ -6,7 +6,10 @@ build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec::Functions: '0'
   List::Util: '0'
+  Path::Tiny: '0'
+  Test::Fatal: '0'
   Test::More: '0.89'
+  lib: '0'
   version: '0'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
@@ -36,6 +39,12 @@ provides:
   Perl::Critic::ProfileCompiler::Action::remove_plugin:
     file: lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
     version: '0.001000'
+  Perl::Critic::ProfileCompiler::ActionList:
+    file: lib/Perl/Critic/ProfileCompiler/ActionList.pm
+    version: '0.001000'
+  Perl::Critic::ProfileCompiler::ActionList::Inflated:
+    file: lib/Perl/Critic/ProfileCompiler/ActionList/Inflated.pm
+    version: '0.001000'
   Perl::Critic::ProfileCompiler::Role::Action:
     file: lib/Perl/Critic/ProfileCompiler/Role/Action.pm
     version: '0.001000'
@@ -54,6 +63,7 @@ requires:
   Moo::Role: '1.000008'
   Scalar::Util: '0'
   Sub::Exporter::Progressive: '0'
+  Try::Tiny: '0'
   perl: '5.008'
   strict: '0'
   utf8: '0'
@@ -116,15 +126,19 @@ x_BuiltWith:
     Module::Runtime: '0.013'
     Moo: '1.004002'
     Moo::Role: '1.004002'
+    Path::Tiny: '0.052'
     Pod::Coverage::TrustPod: '0.100003'
     Scalar::Util: '1.38'
     Sub::Exporter::Progressive: '0.001011'
     Test::CPAN::Changes: '0.27'
     Test::CPAN::Meta: '0.23'
+    Test::Fatal: '0.013'
     Test::Kwalitee: '1.18'
     Test::More: '1.001002'
     Test::Pod: '1.48'
     Test::Pod::Coverage: '1.08'
+    Try::Tiny: '0.19'
+    lib: '0.63'
     strict: '1.08'
     utf8: '1.13'
     version: '0.9907'
@@ -257,6 +271,8 @@ x_Dist_Zilla:
             - lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin_field.pm
             - lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm
             - lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
+            - lib/Perl/Critic/ProfileCompiler/ActionList.pm
+            - lib/Perl/Critic/ProfileCompiler/ActionList/Inflated.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Action.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Bundle.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Bundle/Simple.pm

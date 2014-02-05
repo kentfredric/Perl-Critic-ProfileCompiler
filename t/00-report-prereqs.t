@@ -113,6 +113,7 @@ my $static_prereqs = do { my $x = {
                                       'Moo::Role' => '1.000008',
                                       'Scalar::Util' => '0',
                                       'Sub::Exporter::Progressive' => '0',
+                                      'Try::Tiny' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
@@ -130,7 +131,10 @@ my $static_prereqs = do { my $x = {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
                                    'List::Util' => '0',
+                                   'Path::Tiny' => '0',
+                                   'Test::Fatal' => '0',
                                    'Test::More' => '0.89',
+                                   'lib' => '0',
                                    'version' => '0'
                                  }
                  }
