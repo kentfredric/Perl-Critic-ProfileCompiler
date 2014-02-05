@@ -21,6 +21,15 @@ provides:
   Perl::Critic::ProfileCompiler:
     file: lib/Perl/Critic/ProfileCompiler.pm
     version: '0.001000'
+  Perl::Critic::ProfileCompiler::Action::add_or_replace_plugin:
+    file: lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm
+    version: '0.001000'
+  Perl::Critic::ProfileCompiler::Action::append_bundle:
+    file: lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm
+    version: '0.001000'
+  Perl::Critic::ProfileCompiler::Action::remove_plugin:
+    file: lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
+    version: '0.001000'
   Perl::Critic::ProfileCompiler::Role::Action:
     file: lib/Perl/Critic/ProfileCompiler/Role/Action.pm
     version: '0.001000'
@@ -237,6 +246,9 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
             - lib/Perl/Critic/ProfileCompiler.pm
+            - lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm
+            - lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm
+            - lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Action.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Bundle.pm
             - lib/Perl/Critic/ProfileCompiler/Role/Bundle/Simple.pm

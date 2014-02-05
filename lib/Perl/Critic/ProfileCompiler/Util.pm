@@ -7,6 +7,8 @@ package Perl::Critic::ProfileCompiler::Util;
 $Perl::Critic::ProfileCompiler::Util::VERSION = '0.001000';
 # ABSTRACT: Misc Utility functions
 
+# AUTHORTY
+
 use Sub::Exporter::Progressive -setup => {
   exports => [
     qw( expand_bundle require_bundle create_bundle ),

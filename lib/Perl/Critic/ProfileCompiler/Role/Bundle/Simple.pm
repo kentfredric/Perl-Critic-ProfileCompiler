@@ -7,6 +7,8 @@ package Perl::Critic::ProfileCompiler::Role::Bundle::Simple;
 $Perl::Critic::ProfileCompiler::Role::Bundle::Simple::VERSION = '0.001000';
 # ABSTRACT: A role for bundles that are just collections to policies with no advanced mechanics
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moo::Role;
 
 with 'Perl::Critic::ProfileCompiler::Role::Bundle';
