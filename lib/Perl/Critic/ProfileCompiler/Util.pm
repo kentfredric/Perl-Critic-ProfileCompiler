@@ -7,7 +7,7 @@ package Perl::Critic::ProfileCompiler::Util;
 $Perl::Critic::ProfileCompiler::Util::VERSION = '0.001000';
 # ABSTRACT: Misc Utility functions
 
-# AUTHORTY
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Sub::Exporter::Progressive -setup => {
   exports => [
