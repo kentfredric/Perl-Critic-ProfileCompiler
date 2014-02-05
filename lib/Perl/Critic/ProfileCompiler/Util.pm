@@ -15,14 +15,16 @@ use Sub::Exporter::Progressive -setup => {
     qw( require_policy expand_policy ),
     qw( expand_action require_action create_action ),
     qw( create_pseudoaction inflate_pseudoaction ),
-    qw( add_action_definition_context action_definition_context_list action_definition_context ),
+    qw( sniff_action_caller ),
   ],
 };
+
+my $PREFIX = 'Perl::Critic::ProfileCompiler';
 
 sub expand_bundle {
   my ($bundle) = @_;
   require Module::Runtime;
-  return Module::Runtime::compose_module_name( 'Perl::Critic::ProfileCompiler::Bundle', $bundle );
+  return Module::Runtime::compose_module_name( $PREFIX . '::Bundle', $bundle );
 }
 
 sub require_bundle {
@@ -53,7 +55,7 @@ sub require_policy {
 sub expand_action {
   my ($action) = @_;
   require Module::Runtime;
-  return Module::Runtime::compose_module_name( 'Perl::Critic::ProfileCompiler::Action', $action );
+  return Module::Runtime::compose_module_name( $PREFIX . '::Action', $action );
 }
 
 sub require_action {
@@ -70,7 +72,7 @@ sub create_action {
 
 sub create_pseudoaction {
   my ( $action, @params ) = @_;
-  return [ $action, @params ];
+  return [ $action, ':definition_context', sniff_action_caller(1), @params ];
 }
 
 sub inflate_pseudoaction {
@@ -78,30 +80,37 @@ sub inflate_pseudoaction {
   return create_action( @{$pseudo} );
 }
 
+our $ACTION_WHITELIST = {};
 {
-  my $DC_KEY = ':definition_context';
-
-  sub action_definition_context {
-    my ($d)      = @_;
-    my (@caller) = caller($d);
-    return {
-      package  => $caller[0],
-      filename => $caller[1],
-      line     => $caller[2],
-    };
+  my $ACT_TREE = {
+    "Role::Bundle" =>
+      [ 'append_bundle', 'add_or_replace_plugin', 'add_or_replace_plugin_field', 'add_or_append_plugin_field', 'remove_plugin', ],
+    "ActionList" => ['add_action'],
+    "Util"       => ['create_pseudoaction'],
+  };
+  for my $key ( keys %$ACT_TREE ) {
+    for my $v ( @{ $ACT_TREE->{$key} } ) {
+      $ACTION_WHITELIST->{ $PREFIX . '::' . $key . '::' . $v } = 1;
+    }
   }
+}
 
-  sub action_definition_context_list {
-    my ($d) = @_;
-    return ( $DC_KEY => action_definition_context( $d + 1 ) );
-  }
+sub sniff_action_caller {
+  my ($start) = @_;
+  my ( $callpkg, $callfile, $line, ) = caller($start);
+  my ( undef, undef, undef, $sub, ) = caller( $start + 1 );
+  while ( exists $ACTION_WHITELIST->{$sub} ) {
+    $start++;
+    ( $callpkg, $callfile, $line, ) = caller($start);
+    ( undef, undef, undef, $sub, ) = caller( $start + 1 );
 
-  sub add_action_definition_context {
-    my ( $hash, $d ) = @_;
-    return $hash if exists $hash->{$DC_KEY};
-    $hash->{$DC_KEY} = action_definition_context( $d + 1 );
-    return $hash;
   }
+  return {
+    package => $callpkg,
+    file    => $callfile,
+    line    => $line,
+    sub     => $sub
+  };
 }
 1;
 
