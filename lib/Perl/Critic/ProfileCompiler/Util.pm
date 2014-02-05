@@ -13,6 +13,7 @@ use Sub::Exporter::Progressive -setup => {
   exports => [
     qw( expand_bundle require_bundle create_bundle ),
     qw( require_policy expand_policy ),
+    qw( expand_action require_action create_action )
   ],
 };
 
@@ -45,6 +46,24 @@ sub require_policy {
   require Module::Runtime;
   return Module::Runtime::require_module( expand_policy($policy) );
 
+}
+
+sub expand_action {
+  my ($action) = @_;
+  require Module::Runtime;
+  return Module::Runtime::compose_module_name( 'Perl::Critic::ProfileCompiler::Action', $action );
+}
+
+sub require_action {
+  my ($action) = @_;
+  require Module::Runtime;
+  return Module::Runtime::require_module( expand_action($action) );
+}
+
+sub create_action {
+  my ( $action, @params ) = @_;
+  require_action($action);
+  return expand_action($action)->new(@params);
 }
 
 1;
