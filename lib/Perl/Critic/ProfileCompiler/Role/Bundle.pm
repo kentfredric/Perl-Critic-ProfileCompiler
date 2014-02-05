@@ -11,14 +11,12 @@ package Perl::Critic::ProfileCompiler::Role::Bundle;
 
 use Moo::Role 1.000008;
 
-use Perl::Critic::ProfileCompiler::Util qw( create_pseudoaction );
-
-# Literal config is the unmodifed configuration prior to inlining.
-has 'literal_config' => (
+has 'actionlist' => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
-    return [];
+    require Perl::Critic::ProfileCompiler::ActionList;
+    return Perl::Critic::ProfileCompiler::ActionList->new();
   },
 );
 
@@ -29,41 +27,24 @@ has 'compiler' => (
 
 requires 'configure';
 
-sub register_component {
-  my ( $self, $compiler ) = @_;
-
-}
-
-sub _add_literal_instruction {
-  my ( $self, $instruction_name, %instruction ) = @_;
-  push @{ $self->literal_config }, create_pseudoaction( $instruction_name, %instruction );
-}
-
 sub append_bundle {
   my ( $self, $bundle_name, %parameters ) = @_;
   my $bundle_instance;
   if ( $self->compiler ) {
     $bundle_instance = $self->compiler->load_bundle( $bundle_name, %parameters );
   }
-  $self->_add_literal_instruction(
+  $self->actionlist->add_action(
     'append_bundle' => (
       bundle     => $bundle_name,
       parameters => {%parameters},
-      ( defined $bundle_instance ? ( bundle_contents => $bundle_instance->literal_config ) : () )
+      ( defined $bundle_instance ? ( bundle_contents => $bundle_instance->literal_config ) : () ),
     )
   );
 }
 
-# Find $plugin_name
-#
-# If it exists:
-#   Nuke it, and use this new configuration
-# Otherwise:
-#   Vivify $plugin_name with the provided configuration
-#
 sub add_or_replace_plugin {
   my ( $self, $plugin_name, %parameters ) = @_;
-  $self->_add_literal_instruction(
+  $self->actionlist->add_action(
     'add_or_replace_plugin' => (
       plugin     => $plugin_name,
       parameters => {%parameters},
@@ -85,7 +66,7 @@ sub add_or_replace_plugin {
 #       set the value of $field to $value
 sub add_or_replace_plugin_field {
   my ( $self, $plugin_name, $field, $value ) = @_;
-  $self->_add_literal_instruction(
+  $self->actionlist->add_action(
     'add_or_replace_plugin_field' => (
       plugin => $plugin_name,
       field  => $field,
@@ -96,7 +77,7 @@ sub add_or_replace_plugin_field {
 
 sub add_or_append_plugin_field {
   my ( $self, $plugin_name, $field, $value ) = @_;
-  $self->_add_literal_instruction(
+  $self->actionlist->add_action(
     'add_or_append_plugin_field' => (
       plugin => $plugin_name,
       field  => $field,
@@ -107,7 +88,7 @@ sub add_or_append_plugin_field {
 
 sub remove_plugin {
   my ( $self, $plugin_name ) = @_;
-  $self->_add_literal_instruction(
+  $self->actionlist->add_action(
     'remove_plugin' => (
       plugin => $plugin_name,
     )
