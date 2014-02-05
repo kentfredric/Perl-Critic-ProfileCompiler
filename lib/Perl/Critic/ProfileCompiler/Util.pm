@@ -15,6 +15,7 @@ use Sub::Exporter::Progressive -setup => {
     qw( require_policy expand_policy ),
     qw( expand_action require_action create_action ),
     qw( create_pseudoaction inflate_pseudoaction ),
+    qw( add_action_definition_context action_definition_context_list action_definition_context ),
   ],
 };
 
@@ -77,5 +78,30 @@ sub inflate_pseudoaction {
   return create_action( @{$pseudo} );
 }
 
+{
+  my $DC_KEY = ':definition_context';
+
+  sub action_definition_context {
+    my ($d)      = @_;
+    my (@caller) = caller($d);
+    return {
+      package  => $caller[0],
+      filename => $caller[1],
+      line     => $caller[2],
+    };
+  }
+
+  sub action_definition_context_list {
+    my ($d) = @_;
+    return ( $DC_KEY => action_definition_context( $d + 1 ) );
+  }
+
+  sub add_action_definition_context {
+    my ( $hash, $d ) = @_;
+    return $hash if exists $hash->{$DC_KEY};
+    $hash->{$DC_KEY} = action_definition_context( $d + 1 );
+    return $hash;
+  }
+}
 1;
 
