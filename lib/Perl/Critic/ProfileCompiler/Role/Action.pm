@@ -35,7 +35,11 @@ sub _build_action_name {
 
 sub _inline {
   my ( $self, $stack ) = @_;
-  return $stack unless $self->can('inline');
+  my $clone = [@$stack];
+  if ( not $self->can('inline') ) {
+    push @{$clone}, $self;
+    return $clone;
+  }
   return $self->inline($stack);
 }
 
