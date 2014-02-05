@@ -23,7 +23,9 @@ corpus/01-bundle/Perl/Critic/ProfileCompiler/Bundle/Swift.pm
 corpus/01-bundle/Perl/Critic/ProfileCompiler/Bundle/Tics.pm
 dist.ini
 lib/Perl/Critic/ProfileCompiler.pm
+lib/Perl/Critic/ProfileCompiler/Action/add_or_append_plugin_field.pm
 lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm
+lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin_field.pm
 lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm
 lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm
 lib/Perl/Critic/ProfileCompiler/Role/Action.pm
@@ -47,6 +49,8 @@ maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
 perlcritic.rc
+t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_append_plugin_field_pm.t
+t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_replace_plugin_field_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_add_or_replace_plugin_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_append_bundle_pm.t
 t/00-compile/lib_Perl_Critic_ProfileCompiler_Action_remove_plugin_pm.t

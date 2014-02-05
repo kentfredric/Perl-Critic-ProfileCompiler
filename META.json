@@ -111,8 +111,16 @@
          "file" : "lib/Perl/Critic/ProfileCompiler.pm",
          "version" : "0.001000"
       },
+      "Perl::Critic::ProfileCompiler::Action::add_or_append_plugin_field" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Action/add_or_append_plugin_field.pm",
+         "version" : "0.001000"
+      },
       "Perl::Critic::ProfileCompiler::Action::add_or_replace_plugin" : {
          "file" : "lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm",
+         "version" : "0.001000"
+      },
+      "Perl::Critic::ProfileCompiler::Action::add_or_replace_plugin_field" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin_field.pm",
          "version" : "0.001000"
       },
       "Perl::Critic::ProfileCompiler::Action::append_bundle" : {
@@ -377,7 +385,9 @@
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
                      "lib/Perl/Critic/ProfileCompiler.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Action/add_or_append_plugin_field.pm",
                      "lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Action/add_or_replace_plugin_field.pm",
                      "lib/Perl/Critic/ProfileCompiler/Action/append_bundle.pm",
                      "lib/Perl/Critic/ProfileCompiler/Action/remove_plugin.pm",
                      "lib/Perl/Critic/ProfileCompiler/Role/Action.pm",
