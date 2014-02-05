@@ -17,6 +17,12 @@ has action_name => (
   builder => 1,
 );
 
+has ':definition_context' => (
+  is   => ro =>,
+  lazy => 1,
+  default => sub { return {} },
+);
+
 sub _build_action_name {
   my ($self) = @_;
   require Scalar::Util;
