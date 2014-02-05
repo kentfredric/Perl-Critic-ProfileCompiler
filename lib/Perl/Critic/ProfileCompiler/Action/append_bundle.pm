@@ -30,10 +30,9 @@ sub inline {
   my ( $self, $stack ) = @_;
   my $bundle = create_bundle( $self->bundle, %{ $self->parameters } );
   $bundle->configure;
-  my $infl   = $bundle->actionlist->get_inflated;
-  my $xstack = [ @{$stack} ];
-  push @{$xstack}, @{ $infl->actions };
-  return $xstack;
+  my $infl = $bundle->actionlist->get_inflated;
+  push @{$stack}, @{ $infl->actions };
+  return $stack;
 }
 no Moo;
 
