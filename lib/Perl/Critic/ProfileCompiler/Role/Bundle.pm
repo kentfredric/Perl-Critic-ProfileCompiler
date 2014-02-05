@@ -11,6 +11,8 @@ package Perl::Critic::ProfileCompiler::Role::Bundle;
 
 use Moo::Role 1.000008;
 
+use Perl::Critic::ProfileCompiler::Util qw( create_pseudoaction );
+
 # Literal config is the unmodifed configuration prior to inlining.
 has 'literal_config' => (
   is      => ro =>,
@@ -34,7 +36,7 @@ sub register_component {
 
 sub _add_literal_instruction {
   my ( $self, $instruction_name, %instruction ) = @_;
-  push @{ $self->literal_config }, { instruction => $instruction_name, %instruction };
+  push @{ $self->literal_config }, create_pseudoaction( $instruction_name, %instruction );
 }
 
 sub append_bundle {
