@@ -108,7 +108,11 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'requires' => {
+                                      'Module::Runtime' => '0',
                                       'Moo' => '0',
+                                      'Moo::Role' => '1.000008',
+                                      'Scalar::Util' => '0',
+                                      'Sub::Exporter::Progressive' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',

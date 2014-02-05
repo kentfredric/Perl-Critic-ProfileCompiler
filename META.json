@@ -79,7 +79,11 @@
       },
       "runtime" : {
          "requires" : {
+            "Module::Runtime" : "0",
             "Moo" : "0",
+            "Moo::Role" : "1.000008",
+            "Scalar::Util" : "0",
+            "Sub::Exporter::Progressive" : "0",
             "perl" : "5.008",
             "strict" : "0",
             "utf8" : "0",
@@ -106,9 +110,36 @@
       "Perl::Critic::ProfileCompiler" : {
          "file" : "lib/Perl/Critic/ProfileCompiler.pm",
          "version" : "0.001000"
+      },
+      "Perl::Critic::ProfileCompiler::Role::Action" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Role/Action.pm",
+         "version" : "0.001000"
+      },
+      "Perl::Critic::ProfileCompiler::Role::Bundle" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Role/Bundle.pm",
+         "version" : "0.001000"
+      },
+      "Perl::Critic::ProfileCompiler::Role::Bundle::Simple" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Role/Bundle/Simple.pm",
+         "version" : "0.001000"
+      },
+      "Perl::Critic::ProfileCompiler::Util" : {
+         "file" : "lib/Perl/Critic/ProfileCompiler/Util.pm",
+         "version" : "0.001000"
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/Perl-Critic-ProfileCompiler/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/Perl-Critic-ProfileCompiler",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Perl-Critic-ProfileCompiler.git",
+         "web" : "https://github.com/kentfredric/Perl-Critic-ProfileCompiler"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
@@ -160,8 +191,12 @@
          "ExtUtils::MakeMaker" : "6.88",
          "File::Spec::Functions" : "3.40",
          "List::Util" : "1.38",
+         "Module::Runtime" : "0.013",
          "Moo" : "1.004002",
+         "Moo::Role" : "1.004002",
          "Pod::Coverage::TrustPod" : "0.100003",
+         "Scalar::Util" : "1.38",
+         "Sub::Exporter::Progressive" : "0.001011",
          "Test::CPAN::Changes" : "0.27",
          "Test::CPAN::Meta" : "0.23",
          "Test::Kwalitee" : "1.18",
@@ -329,7 +364,11 @@
             "config" : {
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
-                     "lib/Perl/Critic/ProfileCompiler.pm"
+                     "lib/Perl/Critic/ProfileCompiler.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Role/Action.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Role/Bundle.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Role/Bundle/Simple.pm",
+                     "lib/Perl/Critic/ProfileCompiler/Util.pm"
                   ],
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",
