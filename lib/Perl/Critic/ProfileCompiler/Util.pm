@@ -13,7 +13,8 @@ use Sub::Exporter::Progressive -setup => {
   exports => [
     qw( expand_bundle require_bundle create_bundle ),
     qw( require_policy expand_policy ),
-    qw( expand_action require_action create_action )
+    qw( expand_action require_action create_action ),
+    qw( create_pseudoaction inflate_pseudoaction ),
   ],
 };
 
@@ -64,6 +65,16 @@ sub create_action {
   my ( $action, @params ) = @_;
   require_action($action);
   return expand_action($action)->new(@params);
+}
+
+sub create_pseudoaction {
+  my ( $action, @params ) = @_;
+  return [ $action, @params ];
+}
+
+sub inflate_pseudoaction {
+  my ($pseudo) = @_;
+  return create_action( @{$pseudo} );
 }
 
 1;
