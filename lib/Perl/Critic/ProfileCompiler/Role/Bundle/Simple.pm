@@ -18,7 +18,7 @@ requires 'policies';
 sub configure {
   my ($self) = @_;
   for my $policy ( $self->policies ) {
-    $self->add_or_replace_plugin($policy);
+    $self->add_or_replace_policy($policy);
   }
 }
 
