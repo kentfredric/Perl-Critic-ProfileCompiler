@@ -15,7 +15,7 @@ sub configure {
   my ($self) = @_;
   $self->append_bundle('Core');
   $self->append_bundle('Itch');
-  $self->add_or_replace_plugin('Variables::ProhibitUnusedVarsStricter');
+  $self->add_or_replace_policy('Variables::ProhibitUnusedVarsStricter');
   $self->append_bundle('Pulp');
   $self->append_bundle('More');
   $self->append_bundle('Tics');
