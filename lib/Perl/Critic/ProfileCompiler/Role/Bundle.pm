@@ -42,11 +42,11 @@ sub append_bundle {
   );
 }
 
-sub add_or_replace_plugin {
-  my ( $self, $plugin_name, %parameters ) = @_;
+sub add_or_replace_policy {
+  my ( $self, $policy_name, %parameters ) = @_;
   $self->actionlist->add_action(
-    'add_or_replace_plugin' => (
-      plugin     => $plugin_name,
+    'add_or_replace_policy' => (
+      policy     => $policy_name,
       parameters => {%parameters},
     )
   );
