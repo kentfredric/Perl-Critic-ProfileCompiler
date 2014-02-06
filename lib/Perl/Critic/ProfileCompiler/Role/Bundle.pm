@@ -52,23 +52,11 @@ sub add_or_replace_policy {
   );
 }
 
-# Find $plugin_name
-#
-# If it exists:
-#   find $field
-#       if it exists:
-#           replace its value with $value
-#       if it doesn't exist:
-#           set its value to $value
-#
-# If it doesn't exist:
-#   vivify it
-#       set the value of $field to $value
-sub add_or_replace_plugin_field {
-  my ( $self, $plugin_name, $field, $value ) = @_;
+sub add_or_replace_policy_field {
+  my ( $self, $policy_name, $field, $value ) = @_;
   $self->actionlist->add_action(
-    'add_or_replace_plugin_field' => (
-      plugin => $plugin_name,
+    'add_or_replace_policy_field' => (
+      policy => $policy_name,
       field  => $field,
       value  => $value,
     )
