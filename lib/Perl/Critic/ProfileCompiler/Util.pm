@@ -84,7 +84,7 @@ our $ACTION_WHITELIST = {};
 {
   my $ACT_TREE = {
     "Role::Bundle" =>
-      [ 'append_bundle', 'add_or_replace_plugin', 'add_or_replace_plugin_field', 'add_or_append_plugin_field', 'remove_plugin', ],
+      [ 'append_bundle', 'add_or_replace_plugin', 'add_or_replace_plugin_field', 'add_or_append_policy_field', 'remove_plugin', ],
     "ActionList" => ['add_action'],
     "Util"       => ['create_pseudoaction'],
   };

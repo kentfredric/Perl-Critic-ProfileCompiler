@@ -75,11 +75,11 @@ sub add_or_replace_plugin_field {
   );
 }
 
-sub add_or_append_plugin_field {
-  my ( $self, $plugin_name, $field, $value ) = @_;
+sub add_or_append_policy_field {
+  my ( $self, $policy_name, $field, $value ) = @_;
   $self->actionlist->add_action(
-    'add_or_append_plugin_field' => (
-      plugin => $plugin_name,
+    'add_or_append_policy_field' => (
+      policy => $policy_name,
       field  => $field,
       value  => $value,
     )
